@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Auth0_JWT_M2M.Middleware;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,7 +14,8 @@ namespace Auth0_JWT_M2M.Controllers
     public class HealthCheckController : ControllerBase
     {
         [HttpGet]
-        [Authorize("write:credor_scope")]
+        //[Authorize("write:credor_scope")]
+        [Auth0Authorize("write:credor_scope")]
         public IActionResult GetInfo()
         {
             var authentication = HttpContext.User.Claims;
