@@ -37,7 +37,7 @@ namespace Auth0_JWT_M2M
             }).AddJwtBearer(options =>
             {
                 options.Authority = domain;
-                options.Audience = "paymenttest";
+                options.Audience = "teste1";
             });
 
             services.AddAuthorization(options =>
